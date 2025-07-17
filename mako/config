@@ -1,0 +1,37 @@
+# Take a look at the mako manpage with the command:
+#   man 5 mako
+# To view all configuration options.
+
+font=JetBrainsMono NF 12
+format=<b>%a ⏵</b> %s\n%b
+sort=-time
+layer=overlay
+anchor=top-right
+background-color=#2e3440
+width=400
+height=200
+margin=5
+padding=0,5,10
+border-size=2
+border-color=#b48ead
+border-radius=0
+icons=0
+max-icon-size=64
+default-timeout=5000
+ignore-timeout=0
+
+[urgency=normal]
+border-color=#ebcb8b
+
+[urgency=high]
+border-color=#bf616a
+default-timeout=0
+
+[app-name=lightcord]
+border-color=#a3be8c
+
+[summary~="log-.*"]
+border-color=#a3be8c
+
+[app-name=lightcord summary~="(.*(^| )orz|ORZ|sto|STO|otl|OTL( |$).*)"]
+invisible=1
