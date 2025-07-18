@@ -50,10 +50,11 @@
 
 /* The whole bar */
 #waybar {
-    background: #2e3440;
-    color: white;
+    background: rgba(0,0,0,0.65);
+    color: #bcc0cc;
     font-family: JetBrainsMono NF, Noto Sans, sans-serif;
     font-size: 15px;
+    margin-bottom: 5px;
 }
 
 /* Each module */
@@ -68,21 +69,21 @@
 #pulseaudio,
 #temperature,
 #tray,
-#custom-powerprofile,
-#custom-wlogout {
+#custom-powerprofile {
     padding: 10px;
-    border-radius: 20px;
-    background-color: #2e3440;
-    color: #eceff4;
-    margin: 5px; 
+    color: #f1f1f1; 
     min-width: 25px;
-    box-shadow: 0px 0px 2px 0px rgba(0, 0, 0, 1);
+    border-left: 1px solid #f1f1f1;
 }
 
 
 /* -----------------------------------------------------------------------------
  * Module styles
  * -------------------------------------------------------------------------- */
+
+
+#power-profiles-daemon {
+}
 
 #battery {
     animation-timing-function: linear;
@@ -113,7 +114,6 @@
 }
 
 #cpu {
-  /* No styles */
 }
 
 #cpu.warning {
@@ -142,22 +142,20 @@
 
 #mode {
     font-family: "Font Awesome 6 Brands";
-    background: #b48ead;
     color: white;
     font-size: 20px;
     padding: 10px 9.5px 10px 10px;
 }
 
 #network {
-    /* No styles */
 }
 
+
 #network.disconnected {
-    color: orange;
+    color: #d20f39;
 }
 
 #pulseaudio {
-    /* No styles */
 }
 
 #pulseaudio.muted {
@@ -165,7 +163,6 @@
 }
 
 #custom-spotify {
-    color: rgb(102, 220, 105);
 }
 
 #temperature {
@@ -188,13 +185,16 @@
 #custom-wlogout {
     padding-left: 6px;
     padding-right: 11px;
-    background-color: #bf616a;
+    background-color: #e78284;
+}
+
+#custom-fedora {
+    font-size: 25px;
+    padding: 0 15px;
+    border-right: 1px solid #f1f1f1;
 }
 
 #workspaces {
-    background-color: rgba(0, 0, 0, 0.3);
-    margin: 5px;
-    border-radius: 25px;
     padding: 0 10px 0 10px;
 }
 
@@ -203,18 +203,16 @@
     margin: 0 5px;
     padding-left: 10px;
     padding-right: 10px;
-    color: #d8dee9;
+    color: #f1f1f1;
     font-size: 25px;
-    border-radius: 100%;
 }
 
 #workspaces button.focused {
-    color: #ebcb8b;
+    color: #e5c890;
 }
 
 
 #workspaces button.urgent {
     color: #ffee8c;
 }
-
 

@@ -264,9 +264,9 @@ bindsym XF86AudioPrev exec playerctl previous
 
 
 
-set $bg-color	         #1f1f1f
+set $bg-color	         #f1f1f1
 set $inactive-bg-color   #494949
-set $text-color          #fefefe
+set $text-color          #111111
 set $inactive-text-color #fefefe
 set $urgent-bg-color     #cc1000
 set $indicator		 #b48ead
@@ -280,8 +280,9 @@ client.urgent           $urgent-bg-color    $urgent-bg-color   $text-color      
 
 hide_edge_borders --i3 smart_no_gaps
 
-default_border none
-default_floating_border none
+default_border pixel 2
+default_floating_border pixel 2
+
 titlebar_padding 1
 titlebar_border_thickness 0
 
@@ -364,20 +365,6 @@ bindsym $mod+ctrl+l exec swaylock -c 000000
 
 # Start the GNOME Keyring daemon
 exec /usr/bin/gnome-keyring-daemon --start --components=pkcs11,secrets,ssh
-
-# Swayfx stuff
-
-# Swayfx stuff
-
-corner_radius 15
-shadows enable
-shadow_blur_radius 20
-shadow_color #f1f1f1
-shadow_inactive_color #000000
-shadows_on_csd enable
-
-corner_radius 12
-
 
 
 
