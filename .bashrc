@@ -46,3 +46,4 @@ if [ -f '/home/twoface/Documents/google-cloud-sdk/path.bash.inc' ]; then . '/hom
 
 # The next line enables shell command completion for gcloud.
 if [ -f '/home/twoface/Documents/google-cloud-sdk/completion.bash.inc' ]; then . '/home/twoface/Documents/google-cloud-sdk/completion.bash.inc'; fi
+export PATH="/home/twoface/.cargo/bin:$PATH"

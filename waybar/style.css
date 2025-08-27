@@ -25,7 +25,7 @@
 
 @keyframes blink-critical {
     70% {
-      color: white;
+        color: white;
     }
 
     to {
@@ -50,11 +50,10 @@
 
 /* The whole bar */
 #waybar {
-    background: rgba(0,0,0,0.65);
+    background: #1f1f1f;
     color: #bcc0cc;
     font-family: JetBrainsMono NF, Noto Sans, sans-serif;
     font-size: 15px;
-    margin-bottom: 5px;
 }
 
 /* Each module */
@@ -71,9 +70,8 @@
 #tray,
 #custom-powerprofile {
     padding: 10px;
-    color: #f1f1f1; 
+    color: #f1f1f1;
     min-width: 25px;
-    border-left: 1px solid #f1f1f1;
 }
 
 
@@ -83,30 +81,64 @@
 
 
 #power-profiles-daemon {
+    padding-left: 30px;
+    background-image: url("/home/twoface/.config/waybar/icons/performance_max.png");
+    background-position: 0% 50%;
+    background-size: 25px;
+    background-repeat: no-repeat;
+}
+
+#power-profiles-daemon.performance {
+    background-image: url("/home/twoface/.config/waybar/icons/performance_max.png");
+}
+
+#power-profiles-daemon.balanced {
+    background-image: url("/home/twoface/.config/waybar/icons/performance_mid.png");
+}
+
+#power-profiles-daemon.power-saver {
+    background-image: url("/home/twoface/.config/waybar/icons/performance_low.png");
 }
 
 #battery {
     animation-timing-function: linear;
     animation-iteration-count: infinite;
     animation-direction: alternate;
+    padding-left: 20px;
+    background-image: url("/home/twoface/.config/waybar/icons/battery-full-charging.svg");
+    background-position: -20% 50%;
+    background-size: 25px;
+    background-repeat: no-repeat;
+}
+#battery.discharging {
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+    background-image: url("/home/twoface/.config/waybar/icons/battery-full.svg");
+
+    background-repeat: no-repeat;
 }
 
 #battery.warning {
     color: orange;
+    background-image: url("/home/twoface/.config/waybar/icons/battery-medium-charging.svg");
+}
+
+#battery.warning.discharging {
+    background-image: url("/home/twoface/.config/waybar/icons/battery-medium.svg");
+    animation-name: blink-warning;
+    animation-duration: 3s;
 }
 
 #battery.critical {
     color: red;
-}
-
-#battery.warning.discharging {
-    animation-name: blink-warning;
-    animation-duration: 3s;
+    background-image: url("/home/twoface/.config/waybar/icons/battery-low-charging.svg");
 }
 
 #battery.critical.discharging {
     animation-name: blink-critical;
     animation-duration: 2s;
+    background-image: url("/home/twoface/.config/waybar/icons/battery-low.svg");
 }
 
 #clock {
@@ -114,6 +146,26 @@
 }
 
 #cpu {
+    padding-left: 30px;
+    background-image: url("/home/twoface/.config/waybar/icons/cpu.png");
+    background-position: 5% 50%;
+    background-size: 25px;
+    background-repeat: no-repeat;
+}
+
+#pulseaudio {
+    padding-left: 25px;
+    background-image: url("/home/twoface/.config/waybar/icons/speaker.png");
+    background-position: -5% 50%;
+    background-size: 25px;
+    background-repeat: no-repeat;
+}
+#pulseaudio.muted {
+    background-image: url("/home/twoface/.config/waybar/icons/speaker_mute.png");
+    background-position: 5% 50%;
+    padding-left: 20px;
+
+
 }
 
 #cpu.warning {
@@ -128,6 +180,11 @@
     animation-timing-function: linear;
     animation-iteration-count: infinite;
     animation-direction: alternate;
+    padding-left: 25px;
+    background-image: url("/home/twoface/.config/waybar/icons/ram.png");
+    background-position: -5% 50%;
+    background-size: 25px;
+    background-repeat: no-repeat;
 }
 
 #memory.warning {
@@ -148,22 +205,24 @@
 }
 
 #network {
+    padding-left: 30px;
+    background-image: url("/home/twoface/.config/waybar/icons/wifi.png");
+    background-position: 0% 50%;
+    background-size: 25px;
+    background-repeat: no-repeat;
 }
 
+
+#network.ethernet {
+    background-image: url("/home/twoface/.config/waybar/icons/ethernet.png");
+}
 
 #network.disconnected {
-    color: #d20f39;
+    background-image: url("/home/twoface/.config/waybar/icons/disconnected.png");
+    color: red;
 }
 
-#pulseaudio {
-}
-
-#pulseaudio.muted {
-    /* No styles */
-}
-
-#custom-spotify {
-}
+#custom-spotify {}
 
 #temperature {
     /* No styles */
@@ -182,37 +241,35 @@
     font-weight: bold;
 }
 
-#custom-wlogout {
-    padding-left: 6px;
-    padding-right: 11px;
-    background-color: #e78284;
-}
-
 #custom-fedora {
-    font-size: 25px;
-    padding: 0 15px;
-    border-right: 1px solid #f1f1f1;
+    background-image: url("/home/twoface/.config/waybar/icons/fedora.png");
+    background-position: center;
+    background-size: 30px;
+    background-repeat: no-repeat;
+    padding: 0 10px;
+    min-width: 35px;
 }
 
 #workspaces {
-    padding: 0 10px 0 10px;
+    padding: 10px;
 }
 
 #workspaces button {
-    font-family: "Font Awesome 6 Brands";
-    margin: 0 5px;
-    padding-left: 10px;
-    padding-right: 10px;
-    color: #f1f1f1;
-    font-size: 25px;
+    font-size: 12px;
+    min-width: 15px;
+    min-height: 15px;
+    padding: 0;
+    margin: 0px 3px;
+    border-radius: 100%;
+    color: white;
+    background-color: #5f5f5f;
+}
+
+#workspaces button:hover {
+    background-color: #5f5f5f;
 }
 
 #workspaces button.focused {
-    color: #e5c890;
+    background-color: #ffcc00;
+    color: #1f1f1f;
 }
-
-
-#workspaces button.urgent {
-    color: #ffee8c;
-}
-
