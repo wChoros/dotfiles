@@ -84,7 +84,6 @@ def copy_dotfiles():
 
     # Themes and Fonts
     other_dirs = {
-        "~/.themes": "themes",
     }
 
     for path, name in other_dirs.items():
