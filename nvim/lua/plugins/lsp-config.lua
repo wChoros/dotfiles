@@ -6,18 +6,6 @@ return {
       end
    },
    {
-      "williamboman/mason-lspconfig.nvim",
-      config = function()
-         require("mason-lspconfig").setup({
-            ensure_installed = {
-               "lua_ls", "pyright", "vtsls", "prismals",
-               "bashls", "cssls", "dockerls", "html",
-               "jsonls", "marksman"
-            },
-         })
-      end
-   },
-   {
       "neovim/nvim-lspconfig",
       config = function()
          local lspconfig = require("lspconfig")

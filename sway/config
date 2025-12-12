@@ -14,14 +14,14 @@ set $down j
 set $up k
 set $right l
 # Your preferred terminal emulator
-set $term gnome-terminal --zoom=1
+set $term alacritty
 # Your preferred application launcher
 set $menu fuzzel
 
 ### Output configuration
 #
 # Default wallpaper (more resolutions are available in /usr/share/backgrounds/sway/)
-output * bg /home/twoface/Pictures/wallpapers/wallpaper.jpg fill
+output * bg /home/twoface/Pictures/wallpapers/wallpaper.png fill
 #
 # Example configuration:
 #
@@ -156,6 +156,7 @@ set $workspace10 "10"
 
 assign [class="Spotify"] $workspace6
 assign [app_id="code"] $workspace4
+assign [app_id="antigravity"] $workspace4
 assign [class="Code"] $workspace4
 assign [class="jetbrains-pycharm"] $workspace4
 assign [class="jetbrains-webstorm"] $workspace4
@@ -264,12 +265,12 @@ bindsym XF86AudioPrev exec playerctl previous
 
 
 
-set $bg-color	         #f1f1f1
-set $inactive-bg-color   #494949
-set $text-color          #111111
-set $inactive-text-color #fefefe
-set $urgent-bg-color     #cc1000
-set $indicator		 #b48ead
+set $bg-color	           #d8dee9
+set $inactive-bg-color   #2e3440
+set $text-color          #2e3440
+set $inactive-text-color #eceff4
+set $urgent-bg-color     #8fbcbb
+set $indicator		         #b48ead
 
 # window colors
 #                       border              background         text                 indicator
@@ -304,6 +305,7 @@ input "10182:480:GXTP5100:00_27C6:01E0_Touchpad" {
     natural_scroll enabled
     scroll_method two_finger
     tap enabled
+    xkb_options caps:none
 }
 
 # CONFIGURE MONITORS
@@ -312,8 +314,14 @@ input "10182:480:GXTP5100:00_27C6:01E0_Touchpad" {
 output DP-2 mode 2560x1440 position 1920 -220 scale 1.2
 
 # Configure HDMI-A-1 (AOC) with 1920x1080 and default scaling
+
 output HDMI-A-1 mode 1920x1080 position 0 0 scale 1.0
 
+# Configure the thinkvision monitor
+
+output DP-1 mode 1920x1080 position 0 0 scale 1.2
+
+output eDP-1 mode 1920x1200 scale 1.0
 
 # Switch to using only the laptop display (enable it)
 bindsym $mod+shift+F1 exec swaymsg output eDP-1 enable
@@ -350,9 +358,9 @@ exec mako
 set $gnome-schema org.gnome.desktop.interface
 
 exec_always {
-  gsettings set $gnome-schema gtk-theme Graphite
+  gsettings set $gnome-schema gtk-theme Nordic
   gsettings set $gnome-schema gtk-application-prefer-dark-theme true
-  gsettings set $gnome-schema icon-theme Tela-circle-black
+  gsettings set $gnome-schema icon-theme Tela-circle-nord-dark
   gsettings set $gnome-schema cursor-theme Adwaita
 }
 
@@ -365,7 +373,6 @@ bindsym $mod+ctrl+l exec swaylock -c 000000
 
 # Start the GNOME Keyring daemon
 exec /usr/bin/gnome-keyring-daemon --start --components=pkcs11,secrets,ssh
-
 
 
 include /etc/sway/config.d/*

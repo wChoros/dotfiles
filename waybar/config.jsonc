@@ -120,7 +120,7 @@
             "default": "performance",
             "performance": "performance",
             "balanced": "balanced",
-            "power-saver": "eco"
+            "power-saver": "power-saver"
         },
         "class": {
             "default": "power-profile-default",

@@ -12,28 +12,6 @@
 
 
 
-@keyframes blink-warning {
-    70% {
-        color: white;
-    }
-
-    to {
-        color: white;
-        background-color: #d08770;
-    }
-}
-
-@keyframes blink-critical {
-    70% {
-        color: white;
-    }
-
-    to {
-        color: white;
-        background-color: #bf616a;
-    }
-}
-
 
 /* -----------------------------------------------------------------------------
  * Base styles
@@ -50,8 +28,8 @@
 
 /* The whole bar */
 #waybar {
-    background: #1f1f1f;
-    color: #bcc0cc;
+    background: #2e3440;
+    color: #eceff4;
     font-family: JetBrainsMono NF, Noto Sans, sans-serif;
     font-size: 15px;
 }
@@ -101,9 +79,6 @@
 }
 
 #battery {
-    animation-timing-function: linear;
-    animation-iteration-count: infinite;
-    animation-direction: alternate;
     padding-left: 20px;
     background-image: url("/home/twoface/.config/waybar/icons/battery-full-charging.svg");
     background-position: -20% 50%;
@@ -111,33 +86,27 @@
     background-repeat: no-repeat;
 }
 #battery.discharging {
-    animation-timing-function: linear;
-    animation-iteration-count: infinite;
-    animation-direction: alternate;
     background-image: url("/home/twoface/.config/waybar/icons/battery-full.svg");
-
     background-repeat: no-repeat;
 }
 
 #battery.warning {
-    color: orange;
+    background-color: #2e3440;
     background-image: url("/home/twoface/.config/waybar/icons/battery-medium-charging.svg");
 }
 
 #battery.warning.discharging {
+    color: orange;
     background-image: url("/home/twoface/.config/waybar/icons/battery-medium.svg");
-    animation-name: blink-warning;
-    animation-duration: 3s;
 }
 
 #battery.critical {
-    color: red;
+    background-color:  #2e3440;
     background-image: url("/home/twoface/.config/waybar/icons/battery-low-charging.svg");
 }
 
 #battery.critical.discharging {
-    animation-name: blink-critical;
-    animation-duration: 2s;
+    color: red;
     background-image: url("/home/twoface/.config/waybar/icons/battery-low.svg");
 }
 
@@ -262,7 +231,7 @@
     margin: 0px 3px;
     border-radius: 100%;
     color: white;
-    background-color: #5f5f5f;
+    background-color: #4c566a;
 }
 
 #workspaces button:hover {
@@ -270,6 +239,6 @@
 }
 
 #workspaces button.focused {
-    background-color: #ffcc00;
+    background-color: #bf616a;
     color: #1f1f1f;
 }

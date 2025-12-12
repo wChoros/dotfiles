@@ -31,8 +31,9 @@ alias disconnectheadphones="bluetoothctl disconnect 80:C3:BA:59:0F:7A"
 alias connectsoundbar="bluetoothctl connect F8:1B:A3:79:A7:55"
 alias disconnectsoundbar="bluetoothctl disconnect F8:1B:A3:79:A7:55"
 alias openedulog="code ~/Desktop/OpenEduLog/OpenEduLog-frontend/ && code ~/Desktop/OpenEduLog/OpenEduLog-backend/"
-alias code='code --enable-features=UseOzonePlatform,WaylandWindowDecorations --ozone-platform=wayland'
 alias restartwifi="nmcli radio wifi off && sleep 1 && nmcli radio wifi on"
+alias code='code --enable-features=UseOzonePlatform,WaylandWindowDecorations --ozone-platform=wayland'
+alias antigravity='antigravity --enable-features=UseOzonePlatform,WaylandWindowDecorations --ozone-platform=wayland'
 alias code-aproco-workers="code ~/Desktop/Aproco/aproco-workers"
 alias firefoxa="firefox -P Aproco &"
 alias firefoxp="firefox -P Private &"
